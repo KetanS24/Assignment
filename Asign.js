@@ -10,8 +10,8 @@ function showTab(tabId) {
 // Loan EMI Calculation
 function calculateEMI() {
     var principal = parseFloat(document.getElementById('loan-principal').value);
-    var duration = parseFloat(document.getElementById('loan-duration').value) * 12; // Convert years to months
-    var interestRate = parseFloat(document.getElementById('loan-interest').value) / 12 / 100; // Monthly interest
+    var duration = parseFloat(document.getElementById('loan-duration').value) * 12; 
+    var interestRate = parseFloat(document.getElementById('loan-interest').value) / 12 / 100; 
 
     var emi = (principal * interestRate * Math.pow(1 + interestRate, duration)) / (Math.pow(1 + interestRate, duration) - 1);
     document.getElementById('loan-result').innerText = 'Your EMI is: ' + emi.toFixed(2);
