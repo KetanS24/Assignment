@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EVERYONE'S BANK</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .nav-bar {
+            display: flex;
+            justify-content: space-around;
+        }
+        .nav-bar a {
+            padding: 14px 20px;
+            display: block;
+            text-decoration: none;
+        }
+        .content {
+            padding: 20px;
+        }
+        .tab-content {
+            display: none;
+        }
+        .active-tab {
+            display: block;
+        }
+        input[type="text"], input[type="number"], input[type="password"], select {
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <h1>EVERYONE'S BANK</h1>
+    </div>
+
+    <div class="nav-bar">
+        <a href="#" onclick="showTab('home')">Home</a>
+        <a href="#" onclick="showTab('about')">About Us</a>
+        <a href="#" onclick="showTab('services')">Services</a>
+        <a href="#" onclick="showTab('calculator')">Calculator</a>
+        <a href="#" onclick="showTab('netbanking')">NetBanking</a>
+        <a href="#" onclick="showTab('contact')">Contact Us</a>
+    </div>
+
+    <div class="content">
+
+        <!-- Home Tab -->
+        <div id="home" class="tab-content active-tab">
+            <h2>Welcome to EVERYONE'S BANK</h2>
+            <p>Your trusted bank for all your financial needs.</p>
+        </div>
+
+        <!-- About Us Tab -->
+        <div id="about" class="tab-content">
+            <h2>About Us</h2>
+            <p>EVERYONE'S BANK PROVIDE FINANCIAL SERVICES ALL OVER THE COUNTRY</p>
+        </div>
+
+        <!-- Services Tab -->
+        <div id="services" class="tab-content">
+            <h2>Services</h2>
+            <ul>
+                <li>Savings Account</li>
+                <li>Loans - Home, Car, Personal</li>
+                <li>Fixed Deposits</li>
+                <li>Net Banking</li>
+            </ul>
+        </div>
+
+        <!-- Loan and Deposit Calculator Tab -->
+        <div id="calculator" class="tab-content">
+            <h2>Loan & Deposit Calculator</h2>
+
+            <!-- Loan Section -->
+            <h3>Loan EMI Calculator</h3>
+            <label for="loan-principal">Principal:</label>
+            <input type="number" id="loan-principal" placeholder="Enter loan amount">
+
+            <label for="loan-duration">Duration (in years):</label>
+            <input type="number" id="loan-duration" placeholder="Enter duration">
+
+            <label for="loan-type">Type:</label>
+            <select id="loan-type">
+                <option value="HOME">HOME</option>
+                <option value="CAR">CAR</option>
+                <option value="PERSONAL">PERSONAL</option>
+            </select>
+
+            <label for="loan-interest">Interest Rate:</label>
+            <select id="loan-interest">
+                <option value="8">8%</option>
+                <option value="9">9%</option>
+                <option value="12">12%</option>
+            </select>
+
+            <button onclick="calculateEMI()">Calculate EMI</button>
+            <p id="loan-result"></p>
+
+            <!-- Deposit Section -->
+            <h3>Deposit Calculator</h3>
+            <label for="deposit-amount">Amount:</label>
+            <input type="number" id="deposit-amount" placeholder="Enter deposit amount">
+
+            <label for="deposit-duration">Duration (in years):</label>
+            <select id="deposit-duration">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="more">More than 5</option>
+            </select>
+
+            <button onclick="calculateMaturity()">Calculate Maturity</button>
+            <p id="deposit-result"></p>
+        </div>
+
+        <!-- NetBanking Tab -->
+        <div id="netbanking" class="tab-content">
+            <h2>NetBanking</h2>
+
+            <h3>Login</h3>
+            <label for="customer-id">Customer ID (Numeric):</label>
+            <input type="number" id="customer-id" placeholder="Enter Customer ID">
+
+            <label for="password">Password (8-12 characters):</label>
+            <input type="password" id="password" placeholder="Enter Password">
+
+            <button onclick="login()">Submit</button>
+            <p id="login-result"></p>
+
+            <h3>SignUp</h3>
+            <label for="signup-password">Password:</label>
+            <input type="password" id="signup-password" placeholder="Enter Password">
+
+            <label for="confirm-password">Confirm Password:</label>
+            <input type="password" id="confirm-password" placeholder="Confirm Password">
+
+            <button onclick="signup()">Register</button>
+            <p id="signup-result"></p>
+        </div>
+
+        <!-- Contact Us Tab -->
+        <div id="contact" class="tab-content">
+            <h2>Contact Us</h2>
+            <p>Email: contact@everyone.com</p>
+            <p>Contact No: 0523 565656</p>
+        </div>
+
+    </div>
+
+    <script src="Asign.js"></script>
+
+</body>
+</html>
